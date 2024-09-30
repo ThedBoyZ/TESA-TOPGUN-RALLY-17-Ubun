@@ -1,0 +1,19 @@
+a-xis limgraph : https://www.mathworks.com/help/matlab/creating_plots/change-axis-limits-of-graph.html
+
+% Assuming you have a shapefile for Asian country boundaries named 'asia_boundaries.shp'
+asia = shaperead('path_to_your_shapefile/asia_boundaries.shp','UseGeoCoords',true);
+
+% Creating a figure and setting up a map for Asia
+figure
+ax = worldmap('Asia');
+
+% Setting colors for visualization
+oceanColor = [0.3010 0.7450 0.9330];
+landColor = [0.9290 0.6940 0.1250];
+setm(ax,'FFaceColor',oceanColor)
+
+% Displaying the Asian country boundaries onto the map
+geoshow(asia,'FaceColor',landColor)
+
+% Adding a title to the map
+title('Asian Country Boundaries')
